@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe List</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+    <main>
+        <div class="container">
+            <div class="header-actions">
+                <h1>Recipes</h1>
+                <a href="/add" class="btn btn-add">Add Recipe</a>
+            </div>
+            <div class="card-container">
+                <% recipes.forEach(recipe => { %>
+                    <div class="card">
+                        <h2><%= recipe.name %></h2>
+                        <p><%= recipe.description %></p>
+                        <div class="actions">
+                            <a href="/recipes/<%= recipe.id %>" class="btn btn-view">View</a>
+                            <a href="/edit/<%= recipe.id %>" class="btn btn-edit">Edit</a>
+                            <form action="/recipes/<%= recipe.id %>" method="POST" style="display: inline;">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button type="submit" class="btn btn-delete">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        </div>
+    </main>
+    <%- include('partials/footer') %>
+    <script src="/js/scripts.js"></script> <!-- Include the script -->
+</body>
+</html>

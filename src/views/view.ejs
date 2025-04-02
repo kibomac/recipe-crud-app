@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= recipe.name %></title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+    <main>
+        <div class="container">
+            <div class="content-container">
+                <h1 class="recipe-title"><%= recipe.name %></h1>
+                
+                <p class="recipe-section"><strong>Description:</strong></p>
+                <p class="recipe-content"><%= recipe.description %></p>
+                
+                <p class="recipe-section"><strong>Ingredients:</strong></p>
+                <p class="recipe-content"><%= recipe.ingredients %></p>
+                
+                <p class="recipe-section"><strong>Instructions:</strong></p>
+                <p class="recipe-content"><%= recipe.instructions %></p>
+                
+                <div class="actions">
+                    <a href="/edit/<%= recipe.id %>" class="btn btn-edit">Edit</a>
+                    <form action="/recipes/<%= recipe.id %>" method="POST" style="display: inline;">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-delete">Delete</button>
+                    </form>
+                    <a href="/" class="btn btn-back">Back to Recipes</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <%- include('partials/footer') %>
+    <script src="/js/scripts.js"></script> <!-- Include the script -->
+</body>
+</html>
