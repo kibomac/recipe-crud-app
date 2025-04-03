@@ -209,7 +209,15 @@ footer {
     gap: 10px;
 }
 
-/* Buttons */
+/* Actions container for buttons */
+.actions {
+    display: flex;
+    justify-content: flex-start; /* Align buttons to the left */
+    gap: 15px; /* Add spacing between buttons */
+    margin-top: 20px; /* Add some space above the buttons */
+}
+
+/* General button styles */
 .btn {
     padding: 10px 15px;
     border: none;
@@ -226,6 +234,25 @@ footer {
     transform: scale(1.05);
 }
 
+/* Specific styles for the Update button */
+.btn-edit {
+    background-color: var(--warning-color);
+}
+
+.btn-edit:hover {
+    background-color: #e0a800; /* Slightly darker yellow on hover */
+}
+
+/* Specific styles for the Back button */
+.btn-back {
+    background-color: var(--button-background);
+}
+
+.btn-back:hover {
+    background-color: var(--button-hover);
+}
+
+/* Buttons */
 .btn-view {
     background-color: var(--button-background);
 }
@@ -252,14 +279,6 @@ footer {
 
 .btn-back:hover {
     background-color: var(--button-hover);
-}
-
-/* Actions container for buttons */
-.actions {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 20px;
 }
 
 /* Recipe sections */
